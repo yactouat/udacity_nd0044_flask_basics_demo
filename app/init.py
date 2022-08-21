@@ -1,5 +1,7 @@
 from flask import Flask, jsonify
 
+from routes import init_routes
+
 
 def create_app(test_config=None):
 
@@ -20,5 +22,8 @@ def create_app(test_config=None):
             "success": False,
             "data": None
         }), 404
+
+    # initialisation des routes
+    init_routes(app)
 
     return app

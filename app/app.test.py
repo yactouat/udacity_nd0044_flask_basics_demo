@@ -60,10 +60,6 @@ class AppTest(unittest.TestCase):
         self.assertTrue(res.json["success"])
 
 
-        # res = self.client().post("/api/questions", json={
-        #     "key": "value"
-        # })
-
 # Make the tests executable
 if __name__ == "__main__":
     unittest.main()
