@@ -28,11 +28,9 @@ def create_app(test_config=None):
     app.config["SECRET_KEY"] = "some_dev_key"
     # alternative configuration based on if is test env or not
     if test_config is None:
-        app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://"
-        + "usr:pwd@pgsql:5432/todos"
+        app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://usr:pwd@pgsql:5432/todos"
     elif test_config == "test":
-        app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://"
-        + "usr:pwd@pgsql-test:5433/todos"
+        app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://usr:pwd@pgsql-test:5433/todos"
 
     @app.errorhandler(404)
     def not_found(error):
