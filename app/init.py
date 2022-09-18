@@ -35,7 +35,7 @@ def create_app(test_config=None):
     @app.errorhandler(404)
     def not_found(error):
         app.logger.info(
-            f"user tried to access route {request.full_path}"
+            f"404 => user tried to access route {request.full_path}"
         )
         return jsonify({
             "msg": "resource not found, aborting...",
